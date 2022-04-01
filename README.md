@@ -1,16 +1,8 @@
 # my_crypto_wallet
 
-A new Flutter project.
+A crypto wallet built with Flutter. Currently only supports [TreeCoin (TRC)](https://rinkeby.etherscan.io/address/0x6F6621EA05E7c2C5af925fc9Df015584E220aE2a#code).
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/46898603/161193596-c05a11f7-da07-4961-86f3-18bf73e798cb.mov
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
