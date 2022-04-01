@@ -1,4 +1,4 @@
-# my_crypto_wallet
+# crypto-wallet-flutter
 
 A crypto wallet built with Flutter. Currently only supports [TreeCoin (TRC)](https://rinkeby.etherscan.io/address/0x6F6621EA05E7c2C5af925fc9Df015584E220aE2a#code).
 
