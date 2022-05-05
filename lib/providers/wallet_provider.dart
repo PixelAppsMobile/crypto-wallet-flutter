@@ -10,12 +10,6 @@ import 'package:flutter/services.dart' show rootBundle;
 
 const String contractAddress = '0x6F6621EA05E7c2C5af925fc9Df015584E220aE2a';
 
-typedef TransferEvent = void Function(
-  EthereumAddress from,
-  EthereumAddress to,
-  BigInt value,
-);
-
 final walletProvider = ChangeNotifierProvider((ref) => WalletProvider());
 
 class WalletProvider extends ChangeNotifier {
@@ -123,37 +117,6 @@ class WalletProvider extends ChangeNotifier {
     EthereumAddress address = await _credentials.extractAddress();
     _ethereumAddress = address;
     _publicAddress = address.hex;
-  }
-
-  @override
-  StreamSubscription _listenTransfer(TransferEvent onTransfer, {int? take}) {
-    var events = _web3client.events(FilterOptions.events(
-      contract: _contract,
-      event: _transferEvent(),
-    ));
-
-    if (take != null) {
-      events = events.take(take);
-    }
-
-    return events.listen((event) {
-      if (event.topics == null || event.data == null) {
-        return;
-      }
-
-      final decoded =
-          _transferEvent().decodeResults(event.topics!, event.data!);
-
-      final from = decoded[0] as EthereumAddress;
-      final to = decoded[1] as EthereumAddress;
-      final value = decoded[2] as BigInt;
-
-      print('$from}');
-      print('$to}');
-      print('$value}');
-
-      onTransfer(from, to, value);
-    });
   }
 
   @override
